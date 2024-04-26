@@ -23,62 +23,62 @@ class ProductSeeder extends Seeder
         $product->invQty = 30;
         $product->other = "finomitott";
         $product->manufacturer_id = Manufacturer::where('name', "kabai_cukorgyar")->first()->id;
-        $product->consumable = 2024-07-22;
+        $product->consumable = '2024-07-22';
         $product->save();
 
         $product = new Product();
         $product->name = "uditoital";
         $product->quantity_unit = "zsugor";
         $product->unit = "8db/zsugor";
-        $product->type_id = Type::where('name', "kristalycukor")->first()->id;
+        $product->type_id = Type::where('name', "uditoital")->first()->id;
         $product->invQty = 40;
         $product->other = "narancs_izu";
-        $product->manufacturer_id = Manufacturer::where('name', "kabai_cukorgyar")->first()->id;
-        $product->consumable = 2025-07-22;
+        $product->manufacturer_id = Manufacturer::where('name', "szikszoi")->first()->id;
+        $product->consumable = '2025-07-22';
         $product->save();
 
         $product = new Product();
         $product->name = "tusfurdo";
         $product->quantity_unit = "karton";
         $product->unit = "10db/karton";
-        $product->type_id = Type::where('name', "kristalycukor")->first()->id;
+        $product->type_id = Type::where('name', "tusfurdo")->first()->id;
         $product->invQty = 23;
         $product->other = "ferfi";
-        $product->manufacturer_id = Manufacturer::where('name', "kabai_cukorgyar")->first()->id;
-        $product->consumable = 2024-01-01;
+        $product->manufacturer_id = Manufacturer::where('name', "jozsi_es_jozsi")->first()->id;
+        $product->consumable = '2024-01-01';
         $product->save();
 
         $product = new Product();
         $product->name = "UHT_tej";
         $product->quantity_unit = "karton";
         $product->unit = "10l/karton";
-        $product->type_id = Type::where('name', "kristalycukor")->first()->id;
+        $product->type_id = Type::where('name', "UHT_tej")->first()->id;
         $product->invQty = 2;
         $product->other = "3,5%-os";
-        $product->manufacturer_id = Manufacturer::where('name', "kabai_cukorgyar")->first()->id;
-        $product->consumable = 2024-06-11;
+        $product->manufacturer_id = Manufacturer::where('name', "tejtermelo_kft")->first()->id;
+        $product->consumable = '2024-06-11';
         $product->save();
 
         $product = new Product();
         $product->name = "keztorlo";
         $product->quantity_unit = "csomag";
         $product->unit = "12db/csomag";
-        $product->type_id = Type::where('name', "kristalycukor")->first()->id;
+        $product->type_id = Type::where('name', "keztorlo")->first()->id;
         $product->invQty = 10;
         $product->other = "3_retegu";
-        $product->manufacturer_id = Manufacturer::where('name', "kabai_cukorgyar")->first()->id;
-        $product->consumable = 2024-01-01;
+        $product->manufacturer_id = Manufacturer::where('name', "dunai_papirgyar")->first()->id;
+        $product->consumable = '2024-01-01';
         $product->save();
 
         $product = new Product();
         $product->name = "szorp";
         $product->quantity_unit = "rekesz";
         $product->unit = "16db/rekesz";
-        $product->type_id = Type::where('name', "kristalycukor")->first()->id;
+        $product->type_id = Type::where('name', "szorp")->first()->id;
         $product->invQty = 25;
         $product->other = "epres";
-        $product->manufacturer_id = Manufacturer::where('name', "kabai_cukorgyar")->first()->id;
-        $product->consumable = 2024-07-22;
+        $product->manufacturer_id = Manufacturer::where('name', "szoboszlai")->first()->id;
+        $product->consumable = '2024-07-22';
         $product->save();
     }
 }
