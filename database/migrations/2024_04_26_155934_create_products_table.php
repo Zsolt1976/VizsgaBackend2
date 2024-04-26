@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Manufacturer;
+use App\Models\Type;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,10 +18,10 @@ return new class extends Migration
             $table->string('name', 80);
             $table->string('quantity_unit', 20);
             $table->string('unit', 30);
-            $table->foreignIdFor(\App\Models\Type::class)->constrained();
+            $table->foreignIdFor(Type::class)->constrained();
             $table->integer('invQty');
             $table->string('other', 80);
-            $table->foreignIdFor(\App\Models\Manufacturer::class)->constrained();
+            $table->foreignIdFor(Manufacturer::class)->constrained();
             $table->date('consumable');
             $table->timestamps();
         });
