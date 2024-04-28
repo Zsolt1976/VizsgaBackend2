@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Response;
 
 class StoreProductRequest extends FormRequest
 {
@@ -21,8 +23,27 @@ class StoreProductRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        return[
+            'id'=>'required',
+            'name'=>'required',
+            'quantity_unit'=>'required',
+            'unit'=>'required',
+            'type_id'=>'required',
+            'invQty'=>'required',
+            'other'=>'required',
+            'manufacturer_id'=>'required',
+            'consumable'=>'required',
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new \HttpResponseException(
+            Response::json([
+                'data' => $validator->errors(),
+                'succes' => false,
+                'message' => 'validation error',
+            ], 400)
+        );
     }
 }

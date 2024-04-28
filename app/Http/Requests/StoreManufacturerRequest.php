@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests;
 
+
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Response;
 
 class StoreManufacturerRequest extends FormRequest
 {
@@ -27,5 +30,16 @@ class StoreManufacturerRequest extends FormRequest
             'control' => 'required',
 
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new \HttpResponseException(
+            Response::json([
+                'data' => $validator->errors(),
+                'succes' => false,
+                'message' => 'validation error',
+            ], 400)
+        );
     }
 }
