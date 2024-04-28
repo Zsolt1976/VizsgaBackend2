@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Http\Resources\TypeCollection;
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
+use Illuminate\Support\Facades\Response;
 
 class TypeController extends Controller
 {
@@ -13,7 +16,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        return new TypeCollection(Type::all());
     }
 
     /**

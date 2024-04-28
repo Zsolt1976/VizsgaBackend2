@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ManufacturerCollection;
 use App\Models\Manufacturer;
 use App\Http\Requests\StoreManufacturerRequest;
 use App\Http\Requests\UpdateManufacturerRequest;
+use Illuminate\Support\Facades\Response;
 
 class ManufacturerController extends Controller
 {
@@ -13,7 +15,7 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+        return new ManufacturerCollection(Manufacturer::all());
     }
 
     /**
