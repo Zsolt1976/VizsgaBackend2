@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Resources\TypeCollection;
+use App\Http\Resources\TypeResource;
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
@@ -32,7 +33,17 @@ class TypeController extends Controller
      */
     public function store(StoreTypeRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $type = Type::create($data);
+
+        return Response::json([
+            'data' => new TypeResource($type),
+            'succes' => true,
+            'message' => 'Created',
+        ], 201
+        );
+
     }
 
     /**

@@ -11,7 +11,7 @@ class StoreTypeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,11 @@ class StoreTypeRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        return[
+            'id' => 'required',
+            'name' => 'required',
+            'food' => 'required',
+
         ];
     }
 }
